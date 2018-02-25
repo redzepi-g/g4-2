@@ -1,2 +1,46 @@
-# g4-2
-g4+2
+# Project for G4+2 for SEDC inner competition 
+
+This project is developed by Dime Zlatanovski, Nikola Tashkovski, Gazmend Rexhepi, and David Stergiski. 
+
+
+## How to initialize this project in your local computer
+
+1. Install XAMPP -> https://www.apachefriends.org/index.html
+2. Install Composer -> https://getcomposer.org/
+3. Install GitHub Desktop application
+4. From the GitHub Desktop application, choose Clone a repository, 
+https://github.com/redzepi-g/g4-2.git, make sure you Clone it 
+inside the Htdocs folder of your XAMPP installation folder,
+so generally it should be by default C:/xampp/htdocs
+5. After cloning the repository, open the folder with Visual Code
+if you use it, and press CTRL+` to open terminal, and write
+"composer update" press enter. If you dont use Visual Code, 
+open command prompt, and go to folder of the project, and 
+run "composer update" .
+6. After "composer update" you will be able to view the project live
+on your machine, so activate XAMPP, Apache and mySQL modules, 
+and go to "localhost/g4-2/public" in your browser to view it live.
+
+## Making changes to the project 
+
+If you wanna make changes to the project, you can find the default
+pages listed under /Resources/Views, this is to edit the layout of our 
+project, so basically the index file will be here and available for editting
+with normal html stuff :)
+
+If you wanna include any additional files, like images,scripts, and css, 
+You must create them under the /Public folder, so
+
+* /public/css for css files
+* /public/js for js files
+* /public/img for img files
+
+### To include these files in the default view, you just 
+### have to use {{asset('css/myCss.css')}} in src path. 
+### So :
+
+* For css <link href="{{asset('css/example.css')}}" rel="stylesheet">
+* for js <script src="{{asset('js/myScript.js')}}"></script>
+* for images <img src="{{asset('img/image_one.jpg')}}>
+
+### Dont forget to create your wanted files under the /public directory. 
