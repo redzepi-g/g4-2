@@ -95,6 +95,18 @@
             </div>
             </div>
 
+
+            <!-- this div here maincontent needs to be filled dynamically with JS functions to 
+            display requested information from the user from the 3 buttons on the images -->
+            <div class="row">
+              <div class="col-xs-12 col-sm-12" id="maincontent">
+              
+              
+              </div>
+            </div>
+
+            <!-- this div with id=map is the google maps api, remove/add as needed
+            with js -->
             <div id="map"></div>
 
 

@@ -39,7 +39,6 @@ You must create them under the /Public folder, so
 ### have to use {{asset('css/myCss.css')}} in src path. 
 ### So :
 
-* For css "<link href="{{asset('css/example.css')}}" rel="stylesheet">"
 * for js <script src="{{asset('js/myScript.js')}}"></script>
 * for images <img src="{{asset('img/image_one.jpg')}}>
 
