@@ -17,6 +17,33 @@
    
     <!-- main container start -->
     <div class="container-fluid">
+        <div class="row"> <!-- navigation bar-->
+        <div class="col-xs-12 col-sm-12">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+  <ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+</ul>
+  </div>
+</nav>
+        </div>
+
+        </div><!-- end of navigation -->
+
         <!-- main row start -->
         <div class="row">
             <div class="col-xs-12 col-sm-12">
@@ -31,7 +58,9 @@
             <img src="{{asset('img/bitola_one.jpg')}}" class="d-block w-100 img-fixed" alt="Test">
             <div class="carousel-caption d-none d-md-block">
                 <h5>This is epic.</h5>
-                <button type="button" class="btn btn-primary">Epic button.</button>
+                        <button type="button" class="btn btn-primary">Epic button.</button>
+                        <button type="button" class="btn btn-success">Epic button.</button>
+                        <button type="button" class="btn btn-danger">Epic button.</button>
             </div>
             </div>
 
@@ -40,6 +69,8 @@
                     <div class="carousel-caption d-none d-md-block">
                         <h5>This is epic.</h5>
                         <button type="button" class="btn btn-primary">Epic button.</button>
+                        <button type="button" class="btn btn-success">Epic button.</button>
+                        <button type="button" class="btn btn-danger">Epic button.</button>
                     </div>
                 </div>
 
@@ -48,6 +79,8 @@
                     <div class="carousel-caption d-none d-md-block">
                         <h5>This is epic.</h5>
                         <button type="button" class="btn btn-primary">Epic button.</button>
+                        <button type="button" class="btn btn-success">Epic button.</button>
+                        <button type="button" class="btn btn-danger">Epic button.</button>
                     </div>
                 </div>
             </div>
