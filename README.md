@@ -43,3 +43,13 @@ You must create them under the /Public folder, so
 * for images <img src="{{asset('img/image_one.jpg')}}>
 
 ### Dont forget to create your wanted files under the /public directory. 
+
+
+### To push your changes to github repo, just open
+### your GitHub Desktop application and the changes will
+### be displayed, in the lower left corner you can write the 
+### commit name, So:
+
+* Give the commit a name "Dime did this."
+* Click Commit to master
+* And then you click "Push to origin" on the top middle bar actions.
