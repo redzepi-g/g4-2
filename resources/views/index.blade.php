@@ -24,20 +24,12 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-  <ul class="nav justify-content-center">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-</ul>
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item active">Home</li>
+  <li class="breadcrumb-item"><a href="#">Library</a></li>
+  <li class="breadcrumb-item "><a href = "#">About Us</li>
+</ol>
+
   </div>
 </nav>
         </div>
@@ -57,30 +49,30 @@
             <div class="carousel-item active">
             <img src="{{asset('img/bitola_one.jpg')}}" class="d-block w-100 img-fixed" alt="Test">
             <div class="carousel-caption d-none d-md-block">
-                <h5>This is epic.</h5>
-                        <button type="button" class="btn btn-primary">Epic button.</button>
-                        <button type="button" class="btn btn-success">Epic button.</button>
-                        <button type="button" class="btn btn-danger">Epic button.</button>
+                <h5>Navigation bar</h5>
+                        <button onclick="loadMap()"  type="button" class="btn btn-primary" id="show_map">Directions </button>
+                        <button onclick="loadHistory()" type="button" class="btn btn-success">History</button>
+                        <button onclick="loadPhotos()" type="button" class="btn btn-danger">More Photos</button>
             </div>
             </div>
 
             <div class="carousel-item">
                     <img src="{{asset('img/bitola_two.jpg')}}" class="d-block w-100 img-fixed" alt="Test">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>This is epic.</h5>
-                        <button type="button" class="btn btn-primary">Epic button.</button>
-                        <button type="button" class="btn btn-success">Epic button.</button>
-                        <button type="button" class="btn btn-danger">Epic button.</button>
+                        <h5>Navigation bar</h5>
+                        <button onclick="loadMap()"  type="button" class="btn btn-primary" id="show_map">Directions </button>
+                        <button onclick="loadHistory()" type="button" class="btn btn-success" id="load_history_content">History</button>
+                        <button onclick="loadPhotos()" type="button" class="btn btn-danger">More photos</button>
                     </div>
                 </div>
 
                 <div class="carousel-item">
                     <img src="{{asset('img/bitola_three.jpg')}}" class="d-block w-100 img-fixed" alt="Test">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>This is epic.</h5>
-                        <button type="button" class="btn btn-primary">Epic button.</button>
-                        <button type="button" class="btn btn-success">Epic button.</button>
-                        <button type="button" class="btn btn-danger">Epic button.</button>
+                        <h5>Navigation bar</h5>
+                        <button onclick="loadMap()"  type="button" class="btn btn-primary" id="show_map">Directions </button>
+                        <button onclick="loadHistory()"  type="button" class="btn btn-success">History</button>
+                        <button onclick="loadPhotos()" type="button" class="btn btn-danger">More photos</button>
                     </div>
                 </div>
             </div>
@@ -100,15 +92,40 @@
             display requested information from the user from the 3 buttons on the images -->
             <div class="row">
               <div class="col-xs-12 col-sm-12" id="maincontent">
-              
-              
+              <div id ="historyDiv">
+              <hr class="style2">
+              <h3>History</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae amet quo aperiam quam obcaecati iste, quae magni sed incidunt, nisi maxime adipisci veritatis porro. Laboriosam commodi esse provident voluptatibus ex.</p>
+                
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sit, odit omnis quaerat odio sapiente et voluptate autem officiis. Numquam veniam obcaecati consequatur ducimus quaerat, eligendi dignissimos laudantium nulla similique.</p>
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quo amet, unde corporis libero repellendus molestiae iusto distinctio ex, minus tempora? Alias accusantium accusamus nemo maxime, possimus id quidem hic.</p>
+                  <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda delectus, eos earum illo alias culpa magni nostrum! Recusandae ut doloribus fugit minima temporibus consequatur. Similique ducimus ea atque hic. Iure.</p>
+                </div>
               </div>
+              <br>
+            <hr class="style2">
             </div>
-
+            
+            <div id="morePhotos">
+            <hr class="style2">
+            <h2>More photos</h2>
+           
+            <a href="https://placeholder.com"><img src="http://via.placeholder.com/350x150"></a><br>
+            <hr class="style2">
+            <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100"></a>
+            
+            <a href="https://placeholder.com"><img src="http://via.placeholder.com/200x100"></a>
+            <hr class="style2">
+            </div>
             <!-- this div with id=map is the google maps api, remove/add as needed
             with js -->
+            <br>
+            <hr class="style2">
             <div id="map"></div>
-
+           
+          
 
         </div>
     </div>
@@ -126,14 +143,59 @@
     async defer></script>
 
     <script>
+     
       function initMap() {
         // Create a map object and specify the DOM element for display.
+        var myLatlng = {lat: 41.0297, lng: 21.3292};
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+          center: myLatlng,
+          zoom: 13
         });
-      }
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: 'Click to zoom'
+        });
 
+        map.addListener('center_changed', function() {
+          // 3 seconds after the center of the map has changed, pan back to the
+          // marker.
+          window.setTimeout(function() {
+            map.panTo(marker.getPosition());
+          }, 3000);
+        });
+
+        marker.addListener('click', function() {
+          map.setZoom(8);
+          map.setCenter(marker.getPosition());
+        });
+
+      }
+      function loadMap(){
+        var showMap = document.getElementById("map");
+         if (showMap.style.display === "none") {
+          showMap.style.display = "block";
+        } else {
+          showMap.style.display = "none";
+        }
+      }
+      function loadHistory(){
+        var showHistory = document.getElementById("historyDiv");
+        if (showHistory.style.display === "none") {
+          showHistory.style.display = "block";
+        } else {
+          showHistory.style.display = "none";
+        }
+      }
+      
+      function loadPhotos(){
+        var showPhotos = document.getElementById("morePhotos");
+        if (showPhotos.style.display === "none") {
+          showPhotos.style.display = "block";
+        } else {
+          showPhotos.style.display = "none";
+        }
+      }
     </script>
 
 

@@ -12,13 +12,15 @@
 
         <!-- Styles -->
         <style>
-            html, body {
-                background-color: #fff;
+            html, body {  
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+                background-color: #f0f0f0;
+                width: 700px;
+                float: center
             }
 
             .full-height {
@@ -61,6 +63,21 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+            }
+
+            hr.style2 {
+        	border-top: 3px double #8c8b8b;
+            }
+            
+            input[type=text] {
+             width: 130px;
+            -webkit-transition: width 0.4s ease-in-out;
+             transition: width 0.4s ease-in-out;
+            }
+
+        /* When the input field gets focus, change its width to 100% */
+            input[type=text]:focus {
+             width: 100%;
             }
         </style>
     </head>
