@@ -8,18 +8,21 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- Fontawesome cdn -->
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+
     <!-- custom style -->
     <link rel="stylesheet" href="{{asset('css/alphaStyle.css')}}" />
 
     <title>G4+2 SEDC Project</title>
   </head>
   <body>
-   
 
-    <div class="jumbotron jumbotron-fluid"> <!-- Jumbotron start / main container for full height page landing -->
+
+    <div class="jumbotron jumbotron-fluid" id="landing"> <!-- Jumbotron start / main container for full height page landing -->
         <div class="container-fluid"> <!-- container start -->
-
-            <div class="row"><!-- row nav start -->
+            <button onclick="topFunction()" id="myBtn" class="btn btn-primary" title="Go to top"><i class="fas fa-angle-up fa-2x"></i></button>
+            <div class="row extra-padding"><!-- row nav start -->
                 <!-- navigation -->
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
@@ -57,7 +60,7 @@
                         </div> <!-- item div 1 end -->
     
                         <div class="carousel-item"> <!-- item div 2 start -->
-                                <img src="{{asset('img/bitola_two.jpg')}}" class="d-block img-fluid" alt="Test">
+                                <img src="{{asset('img/bitola_two.jpg')}}" class="d-block img-fluid img-default" alt="Test">
                                 <div class="carousel-caption d-none d-md-block"> <!-- caption div 2 start -->
                                     <h5>Navigation bar</h5>
                                     <button onclick="loadMap()"  type="button" class="btn btn-primary" id="show_map">Directions </button>
@@ -67,7 +70,7 @@
                             </div> <!-- item div 2 end -->
     
                             <div class="carousel-item"> <!-- item 3 div start -->
-                                <img src="{{asset('img/bitola_three.jpg')}}" class="d-block img-fluid" alt="Test">
+                                <img src="{{asset('img/bitola_three.jpg')}}" class="d-block img-fluid img-default" alt="Test">
                                 <div class="carousel-caption d-none d-md-block"> <!-- caption div 3 start -->
                                     <h5>Navigation bar</h5>
                                     <button onclick="loadMap()"  type="button" class="btn btn-primary" id="show_map">Directions </button>
@@ -99,29 +102,109 @@
                     
                     <!-- history div -->
                     <div id="historyDiv">
-                        <hr class="style2">
-                        <h3 class="text-center">History</h3>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae amet quo aperiam quam obcaecati iste, quae magni sed incidunt, nisi maxime adipisci veritatis porro. Laboriosam commodi esse provident voluptatibus ex.</p>
-                          
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sit, odit omnis quaerat odio sapiente et voluptate autem officiis. Numquam veniam obcaecati consequatur ducimus quaerat, eligendi dignissimos laudantium nulla similique.</p>
-                          <br>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quo amet, unde corporis libero repellendus molestiae iusto distinctio ex, minus tempora? Alias accusantium accusamus nemo maxime, possimus id quidem hic.</p>
-                            <br>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda delectus, eos earum illo alias culpa magni nostrum! Recusandae ut doloribus fugit minima temporibus consequatur. Similique ducimus ea atque hic. Iure.</p>
+                        <div class="row"> <!-- main row start -->
+                            <div class="col-xs-12 col-sm-12 extra-padding-25"> <!-- main col start -->
+                                <h3 class="text-center">History</h3>
+                                <hr/>
+
+                                <div class="row extra-padding-25"> <!-- sub row start -->
+                                    
+                                    <!-- col 1 -->
+                                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                                        <h3 class="text-center">About</h3>
+                                        <br/>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a 
+                                            galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the 
+                                            leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of 
+                                            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
+                                            including versions of Lorem Ipsum.</p>
+                                    </div>
+
+                                    <!-- col 2 -->
+                                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                                            <h3 class="text-center">Legacy</h3>
+                                            <br/>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a 
+                                                galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the 
+                                                leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of 
+                                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
+                                                including versions of Lorem Ipsum.</p>
+                                    </div>
+
+                                    <!-- col 3 -->
+                                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                                            <h3 class="text-center">Present day</h3>
+                                            <br/>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a 
+                                                galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the 
+                                                leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of 
+                                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
+                                                including versions of Lorem Ipsum.</p>
+                                    </div>
+
+                                    <!-- col 4 -->
+                                    <div class="col-xs-12 col-sm-12 my-5">
+                                            <h3 class="text-center">Trivia section - Did you know?</h3>
+                                            <br/>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a 
+                                                galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the 
+                                                leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of 
+                                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
+                                                including versions of Lorem Ipsum.</p>
+                                    </div>
+
+                                </div> <!-- sub row end -->
+
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 text-center">
+                                        <a href="#" class="btn btn-primary">Go back to landing page</a>
+                                    </div>
+                                </div>
+
+                            </div> <!-- main col end -->
+                        </div> <!-- main row end -->
                     </div>
                     <!-- end of history div -->
 
                     <!-- more photos div -->
                     <div id="morePhotos">
-                        <hr class="style2">
-                        <h3 class="text-center">More photos</h3>
-                       
-                        <a href="https://placeholder.com"><img src="http://via.placeholder.com/350x150"></a><br>
-                        <hr class="style2">
-                        <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100"></a>
-                        
-                        <a href="https://placeholder.com"><img src="http://via.placeholder.com/200x100"></a>
-                        <hr class="style2">
+                        <div class="row"><!-- main row start -->
+                            <div class="col-xs-12 col-sm-12 extra-padding-25"> <!-- main col start -->
+                                <h3 class="text-center">More photos</h3>
+                                <hr/>
+                            </div><!-- main col end -->
+
+                            <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel"> <!-- carousel start -->
+                                    <ol class="carousel-indicators">
+                                      <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
+                                      <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+                                      <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                      <div class="carousel-item active">
+                                        <img class="d-block w-100" src="{{asset('img/bitola_one.jpg')}}" alt="First slide">
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img class="d-block w-100" src="{{asset('img/bitola_two.jpg')}}" alt="Second slide">
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img class="d-block w-100" src="{{asset('img/bitola_three.jpg')}}" alt="Third slide">
+                                      </div>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Next</span>
+                                    </a>
+                            </div> <!-- carousel end -->
+                        </div><!-- main row end -->
                     </div>
                     <!-- more phots div end -->
 
@@ -151,6 +234,8 @@
 
     <!-- custom scripts here below -->
     <script src="{{asset('js/landingJs.js')}}"></script>
+    <script src="{{asset('js/toTop.js')}}"></script>
+
 
 </body>
 </html>

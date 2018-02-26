@@ -92,17 +92,7 @@
             display requested information from the user from the 3 buttons on the images -->
             <div class="row">
               <div class="col-xs-12 col-sm-12" id="maincontent">
-              <div id ="historyDiv">
-              <hr class="style2">
-              <h3>History</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae amet quo aperiam quam obcaecati iste, quae magni sed incidunt, nisi maxime adipisci veritatis porro. Laboriosam commodi esse provident voluptatibus ex.</p>
-                
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sit, odit omnis quaerat odio sapiente et voluptate autem officiis. Numquam veniam obcaecati consequatur ducimus quaerat, eligendi dignissimos laudantium nulla similique.</p>
-                <br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quo amet, unde corporis libero repellendus molestiae iusto distinctio ex, minus tempora? Alias accusantium accusamus nemo maxime, possimus id quidem hic.</p>
-                  <br>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda delectus, eos earum illo alias culpa magni nostrum! Recusandae ut doloribus fugit minima temporibus consequatur. Similique ducimus ea atque hic. Iure.</p>
-                </div>
+
               </div>
               <br>
             <hr class="style2">
