@@ -15,3 +15,6 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('alpha',function(){
+    return view('alpha');
+});

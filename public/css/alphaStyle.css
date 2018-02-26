@@ -1,0 +1,33 @@
+.jumbotron{
+    height: 100vh;
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+
+.img-fixed{
+     height: 100vh;
+}
+
+body{
+    color:black;
+}
+
+#map{
+    display: none;
+    height:100vh;
+    padding:0;
+}
+
+#historyDiv{
+    display: none;
+    height: 100vh;
+    padding:0;
+}
+
+#morePhotos{
+    display:none;
+    height: 100vh;
+    padding:0;
+}
+
