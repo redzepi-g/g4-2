@@ -53,3 +53,25 @@ commit name, So:
 * Give the commit a name "Dime did this."
 * Click Commit to master
 * And then you click "Push to origin" on the top middle bar actions.
+
+# Working with the API 
+
+## Database setup first.
+
+1. Launch your XAMPP, activate Apache and mySQL modules.
+2. Go to localhost/phpmyadmin, create a new database
+you can see the option "New" on the left sidebar menu. 
+3. Name your new database "groupfour_db" , for collation
+choose "utf8_general_ci"
+4. Dont do anything else, just go to localhost/phpmyadmin,
+click the newly created database, so, "groupfour_db",
+and at the top menu bar click "Import"
+5. Browse to the file that i sent on fb
+and click Go. 
+
+With this pull now, you have access to the Destinations api, with 3 data items available for testing,
+as well as a new view to see for yourself how to read data from the api under /views/testapi.blade.php,
+you can view live in the Console at localhost/g4-2/public/testapi.
+
+**If you dont see the file on fb group, know that you can also find it in the folder of the app under
+/database directory. It will be named "groufour_db.sql" .
