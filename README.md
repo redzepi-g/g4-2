@@ -75,3 +75,6 @@ you can view live in the Console at localhost/g4-2/public/testapi.
 
 **If you dont see the file on fb group, know that you can also find it in the folder of the app under**
 **/database directory. It will be named "groufour_db.sql"**
+
+**If you are in doubt wether you imported the data correctly or not, visit**
+**localhost/g4-2/public/api/destinations , if you get an empty page or an error message then you didnt import the db correctly**
