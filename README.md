@@ -73,5 +73,5 @@ With this pull now, you have access to the Destinations api, with 3 data items a
 as well as a new view to see for yourself how to read data from the api under /views/testapi.blade.php,
 you can view live in the Console at localhost/g4-2/public/testapi.
 
-**If you dont see the file on fb group, know that you can also find it in the folder of the app under
-/database directory. It will be named "groufour_db.sql" . **
+**If you dont see the file on fb group, know that you can also find it in the folder of the app under**
+**/database directory. It will be named "groufour_db.sql"**
