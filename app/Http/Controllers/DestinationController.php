@@ -13,7 +13,8 @@ class DestinationController extends Controller
         return Destination::all();
     }
 
-    public function show(Destination $destination){
+    public function show($id){
+        $destination = Destination::findOrFail($id);
         return $destination;
     }
 
