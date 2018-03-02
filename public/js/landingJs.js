@@ -25,6 +25,7 @@
           map.setCenter(marker.getPosition());
         });
 
+
       }
 
       function loadMap(){

@@ -22,3 +22,11 @@ Route::get('alpha',function(){
 Route::get('testapi',function(){
     return view('testapi');
 });
+
+Route::get('dynamic-map',function(){
+    return view('dml');
+});
+
+Route::get('static-map',function(){
+    return view('sml');
+});

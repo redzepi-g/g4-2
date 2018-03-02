@@ -29,7 +29,7 @@
                         <a class="nav-link active" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Library</a>
+                        <a class="nav-link" href="dynamic-map">Dynamic Tour</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About us</a>
