@@ -78,3 +78,7 @@ you can view live in the Console at localhost/g4-2/public/testapi.
 
 **If you are in doubt wether you imported the data correctly or not, visit**
 **localhost/g4-2/public/api/destinations , if you get an empty page or an error message then you didnt import the db correctly**
+
+# DML and SML routes
+
+**You can access the DML view by visiting localhost/g4-2/public/dynamic-map / and SML by visiting localhost/g4-2/public/static-map**
