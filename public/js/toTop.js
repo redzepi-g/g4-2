@@ -9,23 +9,20 @@ function scrollFunction() {
     }
 }
 
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    //close the open divs
-    var mapDiv = document.getElementById("map");
-    var historyDiv = document.getElementById("historyDiv");
-    var photosDiv = document.getElementById("morePhotos");
-
-    mapDiv.style.display = "none";
-    historyDiv.style.display = "none";
-    photosDiv.style.display = "none";
-
-
-    //smooth scrolling
-    document.querySelector('#landing').scrollIntoView({ 
-        behavior: 'smooth' 
-    });
-
-
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        //close the open divs
+        var mapDiv = document.getElementById("map");
+        var historyDiv = document.getElementById("historyDiv");
+        var photosDiv = document.getElementById("morePhotos");
     
-}
+        mapDiv.style.display = "none";
+        historyDiv.style.display = "none";
+        photosDiv.style.display = "none";
+    
+    
+        //smooth scrolling
+        document.querySelector('#top').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    }

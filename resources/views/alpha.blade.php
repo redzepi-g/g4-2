@@ -23,17 +23,12 @@
 
     <!-- custom scripts here below -->
     <script src="{{asset('js/landingJs.js')}}"></script>
-    <script src="{{asset('js/toTop.js')}}"></script>
+
 
     <title>G4+2 SEDC Project</title>
   </head>
   <body>
-
-
-    <div class="jumbotron jumbotron-fluid" id="landing"> <!-- Jumbotron start / main container for full height page landing -->
-        <div class="container-fluid"> <!-- container start -->
-            <button id="myBtn" class="btn btn-primary" title="Go to top"><i class="fas fa-angle-up fa-2x"></i></button>
-            <div class="row extra-padding"><!-- row nav start -->
+    <div id="top"></div>
                 <!-- navigation -->
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
@@ -48,7 +43,11 @@
 
                     </ul>
                 <!-- end of nav -->
-            </div><!-- row nav end -->
+
+    <div class="jumbotron jumbotron-fluid" id="landing"> <!-- Jumbotron start / main container for full height page landing -->
+        <div class="container-fluid"> <!-- container start -->
+        <button onclick="topFunction()" id="myBtn" class="btn btn-primary" title="Go to top"><i class="fas fa-angle-up fa-2x"></i></button>
+
 
             <div class="row"> <!-- row 1 start -->
 
@@ -105,9 +104,14 @@
       </div> <!-- container end -->
 
     
-      <!-- this is the content below that changes based on user input -->
+     
 
-        <div class="container-fluid"> <!-- container start -->
+
+    </div> <!-- jumbotron end // all content should be inside the jumbotron -->
+
+ <!-- this is the content below that changes based on user input -->
+
+ <div class="container-fluid"> <!-- container start -->
             <div class="row"> <!-- row start -->
                 <div class="col-xs-12 col-sm-12"> <!-- col start -->
                     
@@ -121,24 +125,29 @@
                                 <div class="row extra-padding-25"> <!-- sub row start -->
                                     
                                     <!-- col 1 -->
-                                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                                    <div class="col-xs-12 col-sm-6 col-lg-4 mx-auto">
                                         <h3 class="text-center">About</h3>
                                         <br/>
                                         <p id="aboutP"></p>
                                     </div>
 
-                                    <!-- col 2 -->
-                                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                                    <!--right col -->
+                                    <div class="col-xs-12 col-sm-6 col-lg-4 mx-auto">
+                                        <div class="row">
+                                                                            <!-- col 2 -->
+                                    <div class="col-xs-12 col-sm-12">
                                         <h3 class="text-center">Legacy</h3>
                                         <br/>
                                         <p id="legacyP"></p>
                                     </div>
 
                                     <!-- col 3 -->
-                                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                                    <div class="col-xs-12 col-sm-12">
                                         <h3 class="text-center">Present day</h3>
                                         <br/>
                                         <p id="presentP"></p>
+                                    </div>  
+                                        </div>
                                     </div>
 
                                     <!-- col 4 -->
@@ -168,33 +177,42 @@
                                 <h3 class="text-center">More photos</h3>
                                 <hr/>
                             </div><!-- main col end -->
+                        
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 text-center">
+                                <figure class="figure">
+                                <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                                
+                                <img id="xtra_image_0" class="figure-img img-fluid rounded img-fixed" alt="A generic square placeholder image with rounded corners in a figure.">
+                                </figure>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 text-center">
+                            <figure class="figure">
+                            <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                            
+                                <img id="xtra_image_1" class="figure-img img-fluid rounded img-fixed" alt="A generic square placeholder image with rounded corners in a figure.">
+                                </figure>
+                            </div>
+                        </div>
 
-                            <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel"> <!-- carousel start -->
-                                    <ol class="carousel-indicators">
-                                      <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
-                                      <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
-                                      <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
-                                    </ol>
-                                    <div class="carousel-inner">
-                                      <div class="carousel-item active">
-                                        <img class="d-block w-100" id="xtra_image_0" alt="First slide">
-                                      </div>
-                                      <div class="carousel-item">
-                                        <img class="d-block w-100" id="xtra_image_1" alt="Second slide">
-                                      </div>
-                                      <div class="carousel-item">
-                                        <img class="d-block w-100" id="xtra_image_2" alt="Third slide">
-                                      </div>
-                                    </div>
-                                    <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
-                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                      <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
-                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                      <span class="sr-only">Next</span>
-                                    </a>
-                            </div> <!-- carousel end -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 text-center">
+                                <figure class="figure">
+                                <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                                
+                                <img id="xtra_image_2" class="figure-img img-fluid rounded img-fixed" alt="A generic square placeholder image with rounded corners in a figure.">
+                                </figure>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 text-center">
+                            <figure class="figure">
+                            <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                            
+                                <img id="xtra_image_3" class="figure-img img-fluid rounded img-fixed" alt="A generic square placeholder image with rounded corners in a figure.">
+                                </figure>
+                            </div>
+                        </div>
+                                        
+                            
                         </div><!-- main row end -->
                     </div>
                     <!-- more phots div end -->
@@ -209,17 +227,12 @@
                 </div> <!-- col end -->
             </div><!-- row end -->
         </div><!-- container end-->
-
-
-    </div> <!-- jumbotron end // all content should be inside the jumbotron -->
-
-
    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
+    <script src="{{asset('js/toTop.js')}}"></script>
     <!-- google maps api -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQR0wQoH-VRKpplCisYo2LcWWXw8PjEFY&callback=initMap" async defer></script>
 

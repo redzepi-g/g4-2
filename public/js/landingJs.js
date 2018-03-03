@@ -63,7 +63,7 @@ function initMap() {
       historyBtn.on('click', (e) => {
         e.preventDefault();
         historyBtn.blur();
-
+         
         let about = $('#aboutP');
         let legacy = $('#legacyP');
         let present = $('#presentP');
@@ -86,23 +86,26 @@ function initMap() {
     //More-Photos buttons logic starts here        
     function photosHandlerGenerator(photosBtn, imageSrcs) {
       photosBtn.on('click', (e) => {
+               
         e.preventDefault();
         photosBtn.blur();
-
         let image0 = $('#xtra_image_0');
-        let image1 = $('#xtra_image_0');
-        let image2 = $('#xtra_image_0');
+        let image1 = $('#xtra_image_1');
+        let image2 = $('#xtra_image_2');
+        let image3 = $('#xtra_image_3');
 
         $('#historyDiv').css('display', 'none');
         $('#map').css('display', 'none');
         image0.attr('src', imageSrcs[0]);
         image1.attr('src', imageSrcs[1]);
         image2.attr('src', imageSrcs[2]);
+        image3.attr('src', imageSrcs[3]);
         $('#morePhotos').css('display', 'block');
 
         document.getElementById('morePhotos').scrollIntoView({
           behavior: 'smooth'
         });
+        
       });
     }
     //More-Photos buttons logic ends here            
@@ -127,7 +130,9 @@ function initMap() {
           data[i].img_1.toString(),
           data[i].img_2.toString(),
           data[i].img_3.toString(),
+          data[i].img_4.toString(),
         ]
+        
         directionsHandlerGenerator($(`#show_map_${i}`), coords);
         historyHandlerGenerator($(`#load_history_content_${i}`), history);
         photosHandlerGenerator($(`#load_photos_${i}`), photos);
@@ -221,5 +226,8 @@ function initMap() {
     //     showPhotos.style.display = "none";
     //   }
     // }
+
+    
   });
 }
+
