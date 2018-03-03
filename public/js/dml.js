@@ -15,18 +15,17 @@ function initMap() {
         });
 
         function onSuccess(data) {
-            let unsortedMaps = [];
+            let unsortedMaps1 = [];
             for (let i = 0; i < data.length; i++) {
                 let mapInfo = [{
                     lat: parseFloat(data[i].lat),
                     lng: parseFloat(data[i].lon)
                 }, {
                     img: data[i].img_1.toString(),
-                    info: data[i].about
+                    info: data[i].legacy
                 }]
-                unsortedMaps.push(mapInfo);
+                unsortedMaps1.push(mapInfo);
             }
-            console.log(unsortedMaps);
             // ---------------------GEOLOCATION---------------------------        
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
@@ -34,23 +33,23 @@ function initMap() {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude
                     };
-                    console.log("whatever");
-                    console.log(userPos);
+                let unsortedMaps = unsortedMaps1.sort((a,b) => sortingCoordinatesFunction(a[0],b[0],userPos));     
+                console.log(unsortedMaps);           
                     //--------------INITIAL MAP WITH USER LOCATION---------------
                     for (let i = 0; i < unsortedMaps.length; i++) {
                         //LEFT-SIDE MAP RIGHT-SIDE INFO
                         var mapRow = $(`<div class="row extra-padding" id="mapRow-${i}" />`);
-                        var colLeft = $(`<div class="col-xs-12 col-sm-6" />`);
-                        var mapDiv = $(`<div id="map-${i}" />`);
-                        mapDiv.css("height", "500px");
 
-                        colLeft.append(mapDiv);
-                        mapRow.append(colLeft);
                         $('#mainCol').append(mapRow);
                         var destinationPos = unsortedMaps[i][0];
-                        console.log(userPos);
-                        console.log(destinationPos);
+
                         if (i === 0) {
+                            var colLeft = $(`<div class="col-xs-12 col-sm-6" />`);
+                            var mapDiv = $(`<div id="map-${i}" />`);
+                            mapDiv.css("height", "500px");
+
+                            colLeft.append(mapDiv);
+                            mapRow.append(colLeft);
                             var map = new google.maps.Map(document.getElementById(`map-${i}`), {
                                 center: userPos,
                                 zoom: 16
@@ -79,13 +78,179 @@ function initMap() {
                                     directionsDisplay.setDirections(response);
                                 }
                             });
+
+                            let rightCol = $(`<div class="col-xs-12 col-sm-6" />`);
+                            let subRow = $(`<div class="row" />`);
+                            let col = $('<div class="col-xs-12 col-sm-12" />');
+                            let imgSrc = unsortedMaps[i][1].img;
+                            console.log(imgSrc);
+                            let about = unsortedMaps[i][1].info;
+                            let imgDiv = $(`<img src=${imgSrc} class="img img-fluid img-default" />`);
+                            let moreInfo = $("<h3 class='text-center'>More Info</h3>");
+                            let aboutP = $(`<p>${about}</p>`);
+                            col.append(imgDiv);
+                            col.append(moreInfo);
+                            col.append(aboutP);
+                            subRow.append(col);
+                            rightCol.append(subRow);
+                            mapRow.append(rightCol);
+
+                            var infoWindow = new google.maps.InfoWindow;
+                            infoWindow.setPosition(userPos);
+                            infoWindow.setContent('Your location.');
+                            infoWindow.open(map);
+                        } else if (i === 1) {
+                            userPosition = unsortedMaps[i - 1][0];
+
+                            let rightCol = $(`<div class="col-xs-12 col-sm-6" />`);
+                            let subRow = $(`<div class="row" />`);
+                            let col = $('<div class="col-xs-12 col-sm-12" />');
+                            let imgSrc = unsortedMaps[i][1].img;
+                            console.log(imgSrc);
+                            let about = unsortedMaps[i][1].info;
+                            let imgDiv = $(`<img src=${imgSrc} class="img img-fluid img-default" />`);
+                            let moreInfo = $("<h3 class='text-center'>More Info</h3>");
+                            let aboutP = $(`<p>${about}</p>`);
+                            col.append(imgDiv);
+                            col.append(moreInfo);
+                            col.append(aboutP);
+                            subRow.append(col);
+                            rightCol.append(subRow);
+                            mapRow.append(rightCol);
+                            //LEFT STARTS HERE
+                            var colLeft = $(`<div class="col-xs-12 col-sm-6" />`);
+                            var mapDiv = $(`<div id="map-${i}" />`);
+                            mapDiv.css("height", "500px");
+
+                            colLeft.append(mapDiv);
+                            mapRow.append(colLeft);
+                            var map = new google.maps.Map(document.getElementById(`map-${i}`), {
+                                center: userPosition,
+                                zoom: 16
+                            });
+
+                            var directionsDisplay = new google.maps.DirectionsRenderer({
+                                map: map
+                            });
+
+                            // Set destination, origin and travel mode.
+                            var request = {
+                                destination: destinationPos,
+                                origin: userPosition,
+                                travelMode: 'DRIVING'
+                            };
+
+                            // Pass the directions request to the directions service.   
+                            var directionsService = new google.maps.DirectionsService();
+                            directionsService.route(request, function (response, status) {
+                                if (status == 'OK') {
+                                    // Display the route on the map.
+                                    directionsDisplay.setDirections(response);
+                                }
+                            });
+                        } else {
+                            if (i % 2 === 0) {
+                                userPosition = unsortedMaps[i - 1][0];
+                                var colLeft = $(`<div class="col-xs-12 col-sm-6" />`);
+                                var mapDiv = $(`<div id="map-${i}" />`);
+                                mapDiv.css("height", "500px");
+
+                                colLeft.append(mapDiv);
+                                mapRow.append(colLeft);
+                                var map = new google.maps.Map(document.getElementById(`map-${i}`), {
+                                    center: userPosition,
+                                    zoom: 16
+                                });
+
+                                var directionsDisplay = new google.maps.DirectionsRenderer({
+                                    map: map
+                                });
+
+                                // Set destination, origin and travel mode.
+                                var request = {
+                                    destination: destinationPos,
+                                    origin: userPosition,
+                                    travelMode: 'DRIVING'
+                                };
+
+                                // Pass the directions request to the directions service.   
+                                var directionsService = new google.maps.DirectionsService();
+                                directionsService.route(request, function (response, status) {
+                                    if (status == 'OK') {
+                                        // Display the route on the map.
+                                        directionsDisplay.setDirections(response);
+                                    }
+                                });
+
+                                let rightCol = $(`<div class="col-xs-12 col-sm-6" />`);
+                                let subRow = $(`<div class="row" />`);
+                                let col = $('<div class="col-xs-12 col-sm-12" />');
+                                let imgSrc = unsortedMaps[i][1].img;
+                                console.log(imgSrc);
+                                let about = unsortedMaps[i][1].info;
+                                let imgDiv = $(`<img src=${imgSrc} class="img img-fluid img-default" />`);
+                                let moreInfo = $("<h3 class='text-center'>More Info</h3>");
+                                let aboutP = $(`<p>${about}</p>`);
+                                col.append(imgDiv);
+                                col.append(moreInfo);
+                                col.append(aboutP);
+                                subRow.append(col);
+                                rightCol.append(subRow);
+                                mapRow.append(rightCol);
+                            } else {
+                                userPosition = unsortedMaps[i - 1][0];
+
+                                let rightCol = $(`<div class="col-xs-12 col-sm-6" />`);
+                                let subRow = $(`<div class="row" />`);
+                                let col = $('<div class="col-xs-12 col-sm-12" />');
+                                let imgSrc = unsortedMaps[i][1].img;
+                                console.log(imgSrc);
+                                let about = unsortedMaps[i][1].info;
+                                let imgDiv = $(`<img src=${imgSrc} class="img img-fluid img-default" />`);
+                                let moreInfo = $("<h3 class='text-center'>More Info</h3>");
+                                let aboutP = $(`<p>${about}</p>`);
+                                col.append(imgDiv);
+                                col.append(moreInfo);
+                                col.append(aboutP);
+                                subRow.append(col);
+                                rightCol.append(subRow);
+                                mapRow.append(rightCol);
+                                //LEFT STARTS HERE
+                                var colLeft = $(`<div class="col-xs-12 col-sm-6" />`);
+                                var mapDiv = $(`<div id="map-${i}" />`);
+                                mapDiv.css("height", "500px");
+
+                                colLeft.append(mapDiv);
+                                mapRow.append(colLeft);
+                                var map = new google.maps.Map(document.getElementById(`map-${i}`), {
+                                    center: userPosition,
+                                    zoom: 16
+                                });
+
+                                var directionsDisplay = new google.maps.DirectionsRenderer({
+                                    map: map
+                                });
+
+                                // Set destination, origin and travel mode.
+                                var request = {
+                                    destination: destinationPos,
+                                    origin: userPosition,
+                                    travelMode: 'DRIVING'
+                                };
+
+                                // Pass the directions request to the directions service.   
+                                var directionsService = new google.maps.DirectionsService();
+                                directionsService.route(request, function (response, status) {
+                                    if (status == 'OK') {
+                                        // Display the route on the map.
+                                        directionsDisplay.setDirections(response);
+                                    }
+                                });
+                            }
                         }
                     }
 
-                    var infoWindow = new google.maps.InfoWindow;
-                    infoWindow.setPosition(userPos);
-                    infoWindow.setContent('Your location.');
-                    infoWindow.open(map);
+
                     //-------------INITIAL MAP WITH USER LOCATION---------------        
                     // var posResult = pos.lat + pos.lng;
                     // var sortedMapPositions = mapPositions.sort((a, b) => sortingCoordinatesFunction(a, b, posResult));
@@ -121,7 +286,7 @@ function initMap() {
                 console.log("Browser doesn't support Geolocation.");
             }
         }
-            
+
 
         function sortingCoordinatesFunction(a, b, pos) {
             let posResult = pos;
