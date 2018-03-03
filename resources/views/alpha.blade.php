@@ -14,6 +14,17 @@
     <!-- custom style -->
     <link rel="stylesheet" href="{{asset('css/alphaStyle.css')}}" />
 
+    <!-- jQuery uncompressed cdn -->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+
+    <!-- custom scripts here below -->
+    <script src="{{asset('js/landingJs.js')}}"></script>
+    <script src="{{asset('js/toTop.js')}}"></script>
+
     <title>G4+2 SEDC Project</title>
   </head>
   <body>
@@ -21,7 +32,7 @@
 
     <div class="jumbotron jumbotron-fluid" id="landing"> <!-- Jumbotron start / main container for full height page landing -->
         <div class="container-fluid"> <!-- container start -->
-            <button onclick="topFunction()" id="myBtn" class="btn btn-primary" title="Go to top"><i class="fas fa-angle-up fa-2x"></i></button>
+            <button id="myBtn" class="btn btn-primary" title="Go to top"><i class="fas fa-angle-up fa-2x"></i></button>
             <div class="row extra-padding"><!-- row nav start -->
                 <!-- navigation -->
                 <ul class="nav justify-content-center">
@@ -53,9 +64,9 @@
                             <img src="{{asset('img/bitola_one.jpg')}}" class="d-block img-fluid" alt="Test">
                             <div class="carousel-caption d-none d-md-block"> <!-- caption div 1 start -->
                                 <h5>Navigation bar</h5>
-                                        <button onclick="loadMap()"   class="btn btn-primary" id="show_map">Directions </button>
-                                        <button onclick="loadHistory()"  class="btn btn-success">History</button>
-                                        <button onclick="loadPhotos()"  class="btn btn-danger">More Photos</button>
+                                        <button type="button" class="btn btn-primary" id="show_map_0">Directions </button>
+                                        <button type="button" class="btn btn-success" id="load_history_content_0">History</button>
+                                        <button type="button" class="btn btn-danger" id="load_photos_0">More Photos</button>
                             </div> <!-- caption div 1 end -->
                         </div> <!-- item div 1 end -->
     
@@ -63,9 +74,9 @@
                                 <img src="{{asset('img/bitola_two.jpg')}}" class="d-block img-fluid img-default" alt="Test">
                                 <div class="carousel-caption d-none d-md-block"> <!-- caption div 2 start -->
                                     <h5>Navigation bar</h5>
-                                    <button onclick="loadMap()"  type="button" class="btn btn-primary" id="show_map">Directions </button>
-                                    <button onclick="loadHistory()" type="button" class="btn btn-success" id="load_history_content">History</button>
-                                    <button onclick="loadPhotos()" type="button" class="btn btn-danger">More photos</button>
+                                    <button  type="button" class="btn btn-primary" id="show_map_1">Directions </button>
+                                    <button  type="button" class="btn btn-success" id="load_history_content_1">History</button>
+                                    <button  type="button" class="btn btn-danger" id="load_photos_1">More photos</button>
                                 </div> <!-- caption div 2 end -->
                             </div> <!-- item div 2 end -->
     
@@ -73,9 +84,9 @@
                                 <img src="{{asset('img/bitola_three.jpg')}}" class="d-block img-fluid img-default" alt="Test">
                                 <div class="carousel-caption d-none d-md-block"> <!-- caption div 3 start -->
                                     <h5>Navigation bar</h5>
-                                    <button onclick="loadMap()"  type="button" class="btn btn-primary" id="show_map">Directions </button>
-                                    <button onclick="loadHistory()"  type="button" class="btn btn-success">History</button>
-                                    <button onclick="loadPhotos()" type="button" class="btn btn-danger">More photos</button>
+                                    <button  type="button" class="btn btn-primary" id="show_map_2">Directions </button>
+                                    <button  type="button" class="btn btn-success" id="load_history_content_2">History</button>
+                                    <button  type="button" class="btn btn-danger" id="load_photos_2">More photos</button>
                                 </div> <!-- caption div 3 end -->
                             </div> <!-- item 3 div end -->
                         </div> <!-- div inner end -->
@@ -113,55 +124,35 @@
                                     <div class="col-xs-12 col-sm-6 col-lg-4">
                                         <h3 class="text-center">About</h3>
                                         <br/>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a 
-                                            galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the 
-                                            leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of 
-                                            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
-                                            including versions of Lorem Ipsum.</p>
+                                        <p id="aboutP"></p>
                                     </div>
 
                                     <!-- col 2 -->
                                     <div class="col-xs-12 col-sm-6 col-lg-4">
-                                            <h3 class="text-center">Legacy</h3>
-                                            <br/>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a 
-                                                galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the 
-                                                leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of 
-                                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
-                                                including versions of Lorem Ipsum.</p>
+                                        <h3 class="text-center">Legacy</h3>
+                                        <br/>
+                                        <p id="legacyP"></p>
                                     </div>
 
                                     <!-- col 3 -->
                                     <div class="col-xs-12 col-sm-6 col-lg-4">
-                                            <h3 class="text-center">Present day</h3>
-                                            <br/>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a 
-                                                galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the 
-                                                leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of 
-                                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
-                                                including versions of Lorem Ipsum.</p>
+                                        <h3 class="text-center">Present day</h3>
+                                        <br/>
+                                        <p id="presentP"></p>
                                     </div>
 
                                     <!-- col 4 -->
                                     <div class="col-xs-12 col-sm-12 my-5">
-                                            <h3 class="text-center">Trivia section - Did you know?</h3>
-                                            <br/>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a 
-                                                galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the 
-                                                leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of 
-                                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
-                                                including versions of Lorem Ipsum.</p>
+                                        <h3 class="text-center">Trivia section - Did you know?</h3>
+                                        <br/>
+                                        <p id="triviaP"></p>
                                     </div>
 
                                 </div> <!-- sub row end -->
 
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 text-center">
-                                        <a href="#" class="btn btn-primary">Go back to landing page</a>
+                                        <a href="#" class="btn btn-primary" id="backToTop">Go back to landing page</a>
                                     </div>
                                 </div>
 
@@ -186,13 +177,13 @@
                                     </ol>
                                     <div class="carousel-inner">
                                       <div class="carousel-item active">
-                                        <img class="d-block w-100" src="{{asset('img/bitola_one.jpg')}}" alt="First slide">
+                                        <img class="d-block w-100" id="xtra_image_0" alt="First slide">
                                       </div>
                                       <div class="carousel-item">
-                                        <img class="d-block w-100" src="{{asset('img/bitola_two.jpg')}}" alt="Second slide">
+                                        <img class="d-block w-100" id="xtra_image_1" alt="Second slide">
                                       </div>
                                       <div class="carousel-item">
-                                        <img class="d-block w-100" src="{{asset('img/bitola_three.jpg')}}" alt="Third slide">
+                                        <img class="d-block w-100" id="xtra_image_2" alt="Third slide">
                                       </div>
                                     </div>
                                     <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
@@ -225,16 +216,14 @@
 
    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
     <!-- google maps api -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQR0wQoH-VRKpplCisYo2LcWWXw8PjEFY&callback=initMap" async defer></script>
 
-    <!-- custom scripts here below -->
-    <script src="{{asset('js/landingJs.js')}}"></script>
-    <script src="{{asset('js/toTop.js')}}"></script>
+    
 
 
 </body>
