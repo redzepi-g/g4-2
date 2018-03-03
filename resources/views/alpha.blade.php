@@ -62,30 +62,30 @@
                         <div class="carousel-item active"> <!-- item div 1 start -->
                             <img src="{{asset('img/bitola_one.jpg')}}" class="d-block img-fluid" alt="Test">
                             <div class="carousel-caption d-none d-md-block"> <!-- caption div 1 start -->
-                                <h5>Navigation bar</h5>
+                                <h5 class="destinationTitle">Destination One</h5>
                                         <button type="button" class="btn btn-primary" id="show_map_0">Directions </button>
-                                        <button type="button" class="btn btn-success" id="load_history_content_0">History</button>
-                                        <button type="button" class="btn btn-danger" id="load_photos_0">More Photos</button>
+                                        <button type="button" class="btn btn-primary-dark" id="load_history_content_0">History</button>
+                                        <button type="button" class="btn btn-primary-darker" id="load_photos_0">More Photos</button>
                             </div> <!-- caption div 1 end -->
                         </div> <!-- item div 1 end -->
     
                         <div class="carousel-item"> <!-- item div 2 start -->
                                 <img src="{{asset('img/bitola_two.jpg')}}" class="d-block img-fluid img-default" alt="Test">
                                 <div class="carousel-caption d-none d-md-block"> <!-- caption div 2 start -->
-                                    <h5>Navigation bar</h5>
+                                    <h5 class="destinationTitle">Destination Two</h5>
                                     <button  type="button" class="btn btn-primary" id="show_map_1">Directions </button>
-                                    <button  type="button" class="btn btn-success" id="load_history_content_1">History</button>
-                                    <button  type="button" class="btn btn-danger" id="load_photos_1">More photos</button>
+                                    <button  type="button" class="btn btn-primary-dark" id="load_history_content_1">History</button>
+                                    <button  type="button" class="btn btn-primary-darker" id="load_photos_1">More photos</button>
                                 </div> <!-- caption div 2 end -->
                             </div> <!-- item div 2 end -->
     
                             <div class="carousel-item"> <!-- item 3 div start -->
                                 <img src="{{asset('img/bitola_three.jpg')}}" class="d-block img-fluid img-default" alt="Test">
                                 <div class="carousel-caption d-none d-md-block"> <!-- caption div 3 start -->
-                                    <h5>Navigation bar</h5>
+                                    <h5 class="destinationTitle">Destination Three</h5>
                                     <button  type="button" class="btn btn-primary" id="show_map_2">Directions </button>
-                                    <button  type="button" class="btn btn-success" id="load_history_content_2">History</button>
-                                    <button  type="button" class="btn btn-danger" id="load_photos_2">More photos</button>
+                                    <button  type="button" class="btn btn-primary-dark" id="load_history_content_2">History</button>
+                                    <button  type="button" class="btn btn-primary-darker" id="load_photos_2">More photos</button>
                                 </div> <!-- caption div 3 end -->
                             </div> <!-- item 3 div end -->
                         </div> <!-- div inner end -->

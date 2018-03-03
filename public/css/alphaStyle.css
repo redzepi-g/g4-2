@@ -24,6 +24,28 @@
      
     width:80%;
 }
+
+.destinationTitle{
+    color:white;
+    text-shadow: 2px 2px black;
+    padding:15px;
+}
+
+/*************
+BUTTON STYLING
+**************/
+.btn-primary{color:#fff;background-color:#0047ab;border-color:#0047ab}
+.btn-primary:hover{color:#fff;background-color:#0069d9;border-color:#0047ab}
+.btn-primary.focus,.btn-primary:focus{box-shadow:0 0 0 .2rem rgba(0,123,255,.5)}
+
+.btn-primary-dark{color:#fff;background-color:#1a34ff;border-color:#1a34ff}
+.btn-primary-dark:hover{color:#fff;background-color:#0069d9;border-color:#1a34ff}
+.btn-primary-dark.focus,.btn-primary:focus{box-shadow:0 0 0 .2rem rgba(0,123,255,.5)}
+
+.btn-primary-darker{color:#fff;background-color:#1426ad;border-color:#1426ad}
+.btn-primary-darker:hover{color:#fff;background-color:#0069d9;border-color:#1426ad}
+.btn-primary-darker.focus,.btn-primary:focus{box-shadow:0 0 0 .2rem rgba(0,123,255,.5)}
+
 body{
     color:black;
     width:100%;

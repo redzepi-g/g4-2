@@ -17,7 +17,7 @@
     <title>G4+2 SEDC Project</title>
   </head>
   <body>
-
+<div id="top"></div>
     <!-- navigation -->
     <ul class="nav justify-content-center">
             <li class="nav-item">
@@ -156,7 +156,7 @@
 
     <!-- custom scripts here below -->
     <script src="{{asset('js/dynamicMaps.js')}}"></script>
-    <script src="{{asset('js/toTop.js')}}"></script>
+    <script src="{{asset('js/toTopDml.js')}}"></script>
 
 
 </body>
